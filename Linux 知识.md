@@ -64,3 +64,38 @@
    > 3、重启计算机
    >
    > 如果还不行，就在VM->setting->hardware->display的右面的内容栏中将Accelerate 3D graphics取消，然后重启计算机
+   
+7. Linux 换源
+
+   > Centos 换源
+   >
+   > 1、进入yum源配置文件  cd /etc/yum.repos.d
+   >
+   > 2、备份一份当前源，以防出错 mv ./Centos-Base.repo ./Centos-Base-repo.bak
+   >
+   > 3、下载网易163的源 wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+   >
+   > 4、清理一下旧包 yum clean all
+   >
+   > 5、把下载下来文件 CentOS7-Base-163.repo设置成为默认源 mv CentOS7-Base-163.repo CentOS-Base.repo
+   >
+   > 6、生成缓存即可用163源了 yum makecache
+   >
+   > 7、现在我们就可以用163源来安装软件了！ 如下我们安装一个php 
+   >
+   > yum install php
+   >
+   > 8、查看一下，可以看到已经安装好了：yum list | grep php
+
+   > Ubuntu 换源
+   >
+   > 1、备份原来的源：sudo cp /etc/apt/sources.list /etc/apt/sources_init.list
+   >
+   > 2、
+
+8. Linux软件卸载
+
+   > rpm -qa | grep nginx  #比如这里就是卸载nginx，先查看是否安装有nginx
+   >
+   > yum erase nginx -y 	#CentOS用yum来卸载软件
+
